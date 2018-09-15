@@ -7,11 +7,13 @@
   <body>
     <h1>Magic Books Inc</h1>
     {% for book in books %}
+    <img src="static/img/{{ book.image }}" alt="Cover image for {{ book.title}}" height="200" width="199" class="img-rounded">
     <h4>Tittle: {{ book.title }}</h4>
     <p>Authors: {{ book.author }}</p>
     <p>Format: {{ book.format }}</p>
     <p>Rating: {{ book.avg_rating }}</p>
     <p>Pages: {{ book.num_pages }}</p>
+    <p><a href="{{ url_for('main.display_publisher', publisher_id=book.pub_id) }}">Publisher Id: {{ book.pub_id }}</a></p>
     {% endfor %}
   </body>
 </html>
