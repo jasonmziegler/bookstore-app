@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container publisher">
+  <div class="row">
     <h4>Books by {{ publisher.name }}</h4>
+    <hr>
     <ol>
       {% for book in publisher_books %}
       <li type="1">
@@ -13,5 +11,6 @@
       </li>
       {% endfor %}
     </ol>
-  </body>
-</html>
+  </div>
+</div>
+{% endblock content %}
