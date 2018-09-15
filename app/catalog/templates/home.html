@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Magic Books Inc</title>
+  </head>
+  <body>
+    <h1>Magic Books Inc</h1>
+    {% for book in books %}
+    <h4>Tittle: {{ book.title }}</h4>
+    <p>Authors: {{ book.author }}</p>
+    <p>Format: {{ book.format }}</p>
+    <p>Rating: {{ book.avg_rating }}</p>
+    <p>Pages: {{ book.num_pages }}</p>
+    {% endfor %}
+  </body>
+</html>
