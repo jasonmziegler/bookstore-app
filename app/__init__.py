@@ -3,9 +3,13 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
+from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
 
 db = SQLAlchemy()
 bootstrap = Bootstrap()
+login_manager = LoginManager()
+bcrypt = Bcrypt()
 
 def create_app(config_type): #config_type = prod, test, dev (corresponds to file names)
 
