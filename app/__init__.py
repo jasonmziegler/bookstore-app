@@ -21,4 +21,7 @@ def create_app(config_type): #config_type = prod, test, dev (corresponds to file
     from app.catalog import main #import blueprint
     app.register_blueprint(main) #register blueprint
 
+    from app.auth import authentication
+    app.register_blueprint(authentication)
+
     return app
