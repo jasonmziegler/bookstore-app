@@ -1,7 +1,7 @@
 #app/auth/routes.py
 
 from  flask import render_template, request, flash, redirect, url_for
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, login_required
 from app.auth.forms import RegistrationForm, LoginForm
 from app.auth import authentication as at
 from app.auth.models import User
@@ -37,3 +37,9 @@ def do_the_login():
         return redirect(url_for('main.hello'))
 
     return render_template('login.html', form=form)
+
+@at.route('/logout')
+@login_required
+def log_out_user():
+    logout_user()
+    return redirect(url_for('main.hello'))
