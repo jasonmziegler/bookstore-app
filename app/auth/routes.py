@@ -4,6 +4,7 @@ from  flask import render_template, request, flash, redirect, url_for
 from app.auth.forms import RegistrationForm
 from app.auth import authentication as at
 from app.auth.models import User
+
 @at.route('/register', methods = ['GET','POST'])
 def register_user():
 
@@ -15,6 +16,11 @@ def register_user():
             password=form.password.data
         )
         flash('Registration Successful')
-        return redirect(url_for('at.login_user'))
+        return redirect(url_for('authentication.login_user'))
 
     return render_template('registration.html', form=form)
+
+
+@at.route('/login', methods=['GET','POST'])
+def login_user():
+    return render_template('login.html')
