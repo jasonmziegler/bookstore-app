@@ -29,6 +29,14 @@
             <li><a href="">Home</a></li>
             <li><a href="">Register</a></li>
             <li><a href="">Sign In</a></li>
+            <li><a href="">
+              {% if current_user.is_authenticated %}
+              Logged In as <b style="color: deeppink">{{ current_user.user_name.title() }}</b>
+              {% else %}
+              Not Logged In
+              {% endif %}
+            </a></li>
+
           </ul>
         </div>
       </nav>
