@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <br>
+  <div class="container">
+    <h4>Sorry, the page you requested does not exist.</h4>
+    <span class="label label-primary"><a href="{{ url_for('main.hello') }}" style="color: floralwhite"> Back to Home </a></span>
+
+  </div>
+{% endblock %}

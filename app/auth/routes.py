@@ -48,3 +48,7 @@ def log_out_user():
     logout_user()
     flash('You have been logged out.')
     return redirect(url_for('main.hello'))
+
+@at.app_errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
